@@ -29,7 +29,15 @@ def get_mars_weather():
     response = requests.get(URL_MARS)
     return response.json()
 
+def get_apod():
+    response = requests.get(URL_APOD).json()
+    date = response['date']
+    explanation = response['explanation']
+    url = response['url']
+    return date, explanation, url
 
-
+if __name__ == '__main__':
+    data = get_apod()
+    print(data)
     
    

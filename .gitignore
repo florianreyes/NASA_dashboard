@@ -121,6 +121,7 @@ celerybeat.pid
 
 # Environments
 nasa_venv/
+.streamlit/secrets.toml
 .env
 .venv
 env/
