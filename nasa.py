@@ -2,9 +2,10 @@ import requests
 import json
 from datetime import datetime, timedelta
 import pandas as pd
+import streamlit as st
 
 date = datetime.today()
-API_KEY = "cKHzDHu797xhVuCX2Z25x38Qj6ZAtlowWg8DnXYP"
+API_KEY = "{}".format(st.secrets["nasa_api_key"])
 URL_APOD = "https://api.nasa.gov/planetary/apod?api_key={}".format(API_KEY)
 URL_NEOWS = "https://api.nasa.gov/neo/rest/v1/feed?start_date={}&end_date={}&api_key={}".format(str(date-timedelta(days = 7)).split()[0],str(date).split()[0],API_KEY)
 URL_MARS = "https://api.nasa.gov/insight_weather/?api_key={}&feedtype=json&ver=1.0".format(API_KEY)
